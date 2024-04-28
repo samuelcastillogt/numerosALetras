@@ -60,6 +60,15 @@ button:focus-visible {
 td{
   font-size: 30px;
 }
+table{
+  border: 1px solid white
+}
+input, select{
+  font-size: 25px;
+}
+button{
+  border: 1px solid white;
+}
 tr:hover{
   border: 1px solid red;
   margin: 10px

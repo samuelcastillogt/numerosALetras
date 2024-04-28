@@ -44,7 +44,9 @@ function App() {
       <div>
         <h2>De numeros a letras</h2>
         <div>
-          <input type="text" name="" id="" placeholder='1' ref={desde}/>
+          <label>Desde</label>
+          <input type="text" name="inicio" id="" placeholder='1' ref={desde}/>
+          <label>Hasta</label>
           <input type="text" name="" id="" placeholder='100' ref={hasta}/>
           <select name="" id="" onChange={(e)=> setDe(Number(e.currentTarget.value))}>
             <option value="1">1</option>
@@ -60,10 +62,12 @@ function App() {
        <div>
         <table>
         {
-          resultado && resultado.length > 0 && resultado.map((e, i)=>   <tr key={e.numero} className={i % 2 == 0 ? "par" : "inpar"}>
-          <td key={e.numero}>{e.numero}</td>
-          <td key={e.letra}>{e.letra}</td>
-        </tr>)
+          resultado && resultado.length > 0 && resultado.map((e, i)=>   <tr key={e.numero} 
+                                                                            className={i % 2 == 0 ? "par" : "inpar"}>
+                                                                          <td key={e.numero}>{e.numero}</td>
+                                                                          <td key={e.letra}>{e.letra}</td>
+                                                                        </tr>
+                                                            )
         }          
         </table>
 
