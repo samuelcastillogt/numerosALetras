@@ -13,34 +13,30 @@ function App() {
     const numero2 = Number(hasta.current.value)
     const base = []
     const base2 = []
-    console.log(numero1, numero2)
-    for(var i = 0; i == Number(hasta.current.value); i ++){
-      base2.push(i)
+    for (var i = numero1; i <= numero2; i++) {
+     base.push(i)
     }
     const prev = []
-    console.log(base2)
     if(de == 1){
        base.forEach((value, index)=>{
       const data = {
-        numero: index+1,
-        letra: convertir(index + 1).replace("Pesos 00/100 M.N.", "")
+        numero: value,
+        letra: convertir(value).replace("Pesos 00/100 M.N.", "")
       }
       prev.push(data)
     })   
     }else{
       base.forEach((value, index)=>{
-        const i = index + 1
+        const i = value
         if( i % de == 0){
          const data = {
-          numero: index+1,
-          letra: convertir(index + 1).replace("Pesos 00/100 M.N.", "")
+          numero: value,
+          letra: convertir(value).replace("Pesos 00/100 M.N.", "")
         }
         prev.push(data)    
         }
       })  
     }
-
-    console.log(prev)
     setResultado(prev)
   }
   return (
@@ -64,9 +60,9 @@ function App() {
        <div>
         <table>
         {
-          resultado && resultado.length > 0 && resultado.map((e)=>   <tr>
-          <td>{e.numero}</td>
-          <td>{e.letra}</td>
+          resultado && resultado.length > 0 && resultado.map((e, i)=>   <tr key={e.numero} className={i % 2 == 0 ? "par" : "inpar"}>
+          <td key={e.numero}>{e.numero}</td>
+          <td key={e.letra}>{e.letra}</td>
         </tr>)
         }          
         </table>

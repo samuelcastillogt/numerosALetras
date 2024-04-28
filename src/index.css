@@ -53,7 +53,17 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+.par{
+  background-color: white;
+  color: black
+}
+td{
+  font-size: 30px;
+}
+tr:hover{
+  border: 1px solid red;
+  margin: 10px
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
